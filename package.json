@@ -1,0 +1,71 @@
+{
+  "name": "moleculus",
+  "description": "",
+  "license": "ISC",
+  "author": "Moleculus Group",
+  "homepage": "https://gitlab.com/CGSTUDIO/moleculus#readme",
+  "repository": "git+https://gitlab.com/CGSTUDIO/moleculus.git",
+  "bugs": {
+    "url": "https://gitlab.com/CGSTUDIO/moleculus/issues"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "pre-commit": "lint-staged",
+    "build": "webpack --config webpack.config.js",
+    "format": "run-s format:package format:prettier format:eslint",
+    "format:eslint": "eslint --ext .js, .jsx, .ts, .tsx ./",
+    "format:package": "prettier-package-json --write",
+    "format:prettier": "prettier --write \"**/*.{js,json,md,yml}\" \".editorconfig\" \"LICENSE\"",
+    "lint": "eslint --cache ./",
+    "playroom:build": "playroom build",
+    "playroom:start": "playroom start",
+    "start": "webpack-dev-server --mode development --open --hot",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "validate": "npm run lint",
+    "watch": "webpack -w"
+  },
+  "dependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "@material-ui/core": "^4.9.3",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "@typescript-eslint/eslint-plugin": "^2.19.2",
+    "@typescript-eslint/parser": "^2.19.2",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-airbnb-typescript": "^7.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.15.1",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^4.2.1",
+    "lint-staged": "^10.0.7",
+    "node-sass": "^4.13.1",
+    "playroom": "^0.15.1",
+    "prettier-package-json": "^2.1.3",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "sass-loader": "^8.0.2",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.1.3",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "keywords": [],
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn pre-commit"
+    }
+  }
+}
